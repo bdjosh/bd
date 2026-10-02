@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黒い砂漠 グローバルラボ 2026/10/02 アップデートまとめ</title>
+<style>
+:root{
+  --bg:#0e1116;
+  --panel:#171c23;
+  --panel2:#202733;
+  --text:#edf2f7;
+  --muted:#aeb8c5;
+  --accent:#d6ad60;
+  --accent2:#6cc5d3;
+  --good:#7ed6a5;
+  --warn:#f0c674;
+  --danger:#ef8f8f;
+  --line:#303846;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#0a0d12 0%,#111722 100%);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  line-height:1.7;
+}
+.container{max-width:1050px;margin:0 auto;padding:32px 20px 64px}
+.hero{
+  background:linear-gradient(135deg,#1b2330,#151a21);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:28px;
+  box-shadow:0 16px 40px rgba(0,0,0,.25);
+}
+.kicker{color:var(--accent);font-weight:700;letter-spacing:.08em;font-size:.9rem}
+h1{font-size:2rem;line-height:1.3;margin:.35rem 0 .5rem}
+h2{margin:2.1rem 0 .8rem;font-size:1.4rem}
+h3{margin:1.3rem 0 .5rem;font-size:1.08rem}
+p{margin:.5rem 0}
+.muted{color:var(--muted)}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.badge{
+  padding:5px 10px;border-radius:999px;background:#242d3a;
+  border:1px solid #354052;font-size:.83rem;color:#dfe7ef
+}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin-top:18px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  padding:18px
+}
+.card strong{color:#fff}
+.big{font-size:1.22rem;font-weight:800;color:var(--accent)}
+.important{border-left:4px solid var(--accent)}
+.hunt{border-left:4px solid var(--accent2)}
+.class{border-left:4px solid #c69cf4}
+.note{border-left:4px solid var(--warn)}
+.good{color:var(--good)}
+.warn{color:var(--warn)}
+table{
+  width:100%;border-collapse:collapse;margin:14px 0 6px;background:var(--panel);
+  border-radius:12px;overflow:hidden
+}
+th,td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#202733;color:#fff}
+tr:last-child td{border-bottom:none}
+ul{padding-left:1.25rem}
+li{margin:.35rem 0}
+.callout{
+  margin:18px 0;padding:16px 18px;border-radius:12px;
+  background:#1d2630;border:1px solid #344252
+}
+.score{
+  display:inline-block;min-width:72px;text-align:center;border-radius:8px;
+  padding:3px 8px;font-weight:700;background:#2a3340
+}
+footer{margin-top:32px;color:var(--muted);font-size:.88rem}
+code.inline{background:#202733;padding:2px 6px;border-radius:6px}
+@media(max-width:640px){
+  h1{font-size:1.55rem}
+  .container{padding:20px 12px 42px}
+  th,td{font-size:.92rem;padding:9px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<section class="hero">
+  <div class="kicker">BLACK DESERT GLOBAL LAB</div>
+  <h1>2026年10月2日 グローバルラボ更新まとめ</h1>
+  <p class="muted">今週はかなり大きめ。中心は「最大Lv75」「Lv70以降のPvE成長」「戦闘経験値システム刷新」「事象の地平線改善」。</p>
+  <div class="badges">
+    <span class="badge">最大Lv75</span>
+    <span class="badge">PvE能力値追加</span>
+    <span class="badge">戦闘秘伝書（仮称）</span>
+    <span class="badge">事象の地平線改善</span>
+    <span class="badge">伝承ウサ調整</span>
+    <span class="badge">覚醒ヴァルキリー調整</span>
+  </div>
+</section>
+
+<div class="callout">
+  <strong>日本語表記について：</strong>
+  既に日本公式で使われている名称は日本サーバー表記に統一しています。
+  まだ日本サーバーに未実装で正式名称を確認できない新規アイテム等は、誤って正式名称として断定しないよう「仮称」と記載しています。
+</div>
+
+<h2>まず結論：今週の重要ポイント</h2>
+<div class="grid">
+  <div class="card important">
+    <div class="big">① 最大レベル 75</div>
+    <p>これまで実質的に青天井だったレベルに、明確な上限Lv75が設定。</p>
+    <p>Lv75到達後は、そのキャラ自身の経験値は増えない。</p>
+  </div>
+  <div class="card important">
+    <div class="big">② Lv70～75でPvE能力値</div>
+    <p>Lv.70以降、1レベル上がるごとに<strong>モンスターに対する追加攻撃力 +3 / モンスターから受けるダメージ減少 +3</strong>。</p>
+    <p>Lv.75では両方とも<strong>+18</strong>。</p>
+  </div>
+  <div class="card hunt">
+    <div class="big">③ 事象の地平線 改善</div>
+    <p>イベドル撃破後に敵が正常に湧かない問題、追跡区間の配置、ワームホール後の処理などをまとめて修正。</p>
+  </div>
+  <div class="card note">
+    <div class="big">④ PvE/PvPでも経験値を稼ぐ</div>
+    <p>黒い祠、血の祭壇、拠点戦、占領戦、ギルドリーグなどから経験値アイテム「戦闘秘伝書」（仮称）を入手可能に。</p>
+  </div>
+</div>
+
+<div class="callout">
+  <strong>特に重要：</strong>
+  Lv70以上は、単なる「数字だけのレベル」ではなくなる。高難度狩場ではLv差による防御補正も追加されるので、今後は装備だけでなくキャラレベルも実戦性能に影響する。
+</div>
+
+<h2>1. レベル・経験値システム大改修</h2>
+
+<h3>最大レベルが 70 → 75</h3>
+<ul>
+  <li>最大到達レベルが<strong>75</strong>に。</li>
+  <li>Lv75到達後は、そのキャラクター自身の戦闘経験値は増加しない。</li>
+  <li>ただしキャラクター転換による転換先への経験値蓄積は継続。</li>
+</ul>
+
+<h3>Lv70以上のPvE能力値</h3>
+<table>
+<thead><tr><th>レベル</th><th>モンスターに対する追加攻撃力</th><th>モンスターから受けるダメージ減少</th></tr></thead>
+<tbody>
+<tr><td>70</td><td>+3</td><td>+3</td></tr>
+<tr><td>71</td><td>+6</td><td>+6</td></tr>
+<tr><td>72</td><td>+9</td><td>+9</td></tr>
+<tr><td>73</td><td>+12</td><td>+12</td></tr>
+<tr><td>74</td><td>+15</td><td>+15</td></tr>
+<tr><td>75</td><td><strong>+18</strong></td><td><strong>+18</strong></td></tr>
+</tbody>
+</table>
+
+<p>さらに転換設定中のキャラには、<strong>2キャラのうち高い方のレベルによる追加能力値</strong>が適用される。たとえばLv72とLv66を転換すると、Lv66側にもLv72相当の「モンスターに対する追加攻撃力+9 / 被害減少+9」が適用。</p>
+
+<h3>モンスターとのレベル差によるダメージ減少効果</h3>
+<ul>
+  <li>モンスターより自分のレベルが1高い → モンスターから受けるダメージ減少 +3</li>
+  <li>2高い → +6</li>
+  <li>3以上高い → 最大 +9</li>
+</ul>
+<p class="muted">※上の「Lv70以上の追加能力値」とは別枠の仕組みとして説明されている。</p>
+
+<h3>経験値テーブルそのものも再設計</h3>
+<ul>
+  <li>全レベル帯の必要経験値を変更。</li>
+  <li>全モンスターの獲得経験値を調整。</li>
+  <li>クエスト経験値、闇の精霊の修練経験値も調整。</li>
+  <li>1体の敵から得られる最大経験値割合に上限を設定。</li>
+</ul>
+
+<h3>経験値系バフも強化</h3>
+<table>
+<thead><tr><th>項目</th><th>変更</th></tr></thead>
+<tbody>
+<tr><td>キャンプ「身体強化法」</td><td>戦闘/スキル経験値 +50% → <strong>+100%</strong></td></tr>
+<tr><td>冒険の加護</td><td>戦闘/スキル経験値 +15% → <strong>+30%</strong></td></tr>
+<tr><td>パール衣装4部位</td><td>戦闘経験値 +10% → <strong>+50%</strong></td></tr>
+<tr><td>パール衣装6部位</td><td>スキル経験値 +10% → <strong>+50%</strong></td></tr>
+</tbody>
+</table>
+
+<h2>2. 新アイテム「戦闘秘伝書」（研究所段階の仮称）</h2>
+<p>狩り以外のコンテンツでも、直接的にキャラクターレベルを上げやすくする仕組み。</p>
+
+<table>
+<thead><tr><th>種類</th><th>Lv66基準の経験値</th></tr></thead>
+<tbody>
+<tr><td>小型</td><td>0.2%</td></tr>
+<tr><td>中型</td><td>1%</td></tr>
+<tr><td>大型</td><td>7.5%</td></tr>
+<tr><td>超大型</td><td><strong>15%</strong></td></tr>
+</tbody>
+</table>
+
+<h3>主な入手先</h3>
+<table>
+<thead><tr><th>コンテンツ</th><th>報酬</th></tr></thead>
+<tbody>
+<tr><td>黒い祠（東海道 / 黄海道）</td><td>ボス1体につき 小型×1</td></tr>
+<tr><td>ギルドボス</td><td>1体につき 中型×1</td></tr>
+<tr><td>血の祭壇</td><td>段階クリアごとに 中型×1</td></tr>
+<tr><td>拠点戦</td><td>勝利：中型×2 / 敗北：小型×2</td></tr>
+<tr><td>占領戦</td><td>勝利：大型×1 / 敗北：中型×2</td></tr>
+<tr><td>薔薇戦争</td><td>勝利：超大型×1 / 敗北：中型×4</td></tr>
+<tr><td>赤の戦場</td><td>勝利：小型×1</td></tr>
+<tr><td>ギルドリーグ</td><td>勝利：小型×1</td></tr>
+<tr><td>ソラレの闘技場 ランク戦</td><td>勝利：小型×1</td></tr>
+</tbody>
+</table>
+
+<p class="warn"><strong>実装予定：</strong>韓国10月14日 / グローバル10月15日。10月7日（韓国）・8日（グローバル）以降の対象コンテンツ記録は遡って支給予定。</p>
+
+<h2>3. 事象の地平線：かなり重要な改善</h2>
+<div class="card hunt">
+<ul>
+  <li><strong>イベドル撃破後の初期化中、絶望に侵食されたエダナが出現しないことがある不具合を修正。</strong></li>
+  <li>イベドル追跡ルート上のエダナの配置・出現方法を変更。</li>
+  <li>逃走するイベドルの進行方向を基準にモンスターが出現するよう変更。</li>
+  <li>固定位置ではなく、追跡ルート内の複数地点からランダム出現。</li>
+  <li>「失敗作のエダナ」の種類が、1グループ内でも多様になる。</li>
+  <li>「絶望の導き手」周辺のモンスター数を他の狩り区間と同程度になるよう調整。</li>
+  <li><strong>ワームホールギミック成功時のみ</strong>、イベドル追跡路にエダナが1回出現。</li>
+  <li>ワームホール中に狩りを中断した場合、狩場がより早く初期化。</li>
+  <li>特殊ギミック終了後の報酬は、出現した戦利品に近づいて直接獲得する方式へ変更。</li>
+</ul>
+</div>
+
+<div class="callout">
+  <strong>今起きている「全部倒したのに次のワームホールが出ず、次のMob湧きを待つ」現象との関係：</strong><br>
+  少なくとも今回、公式側が「イベドル撃破後の初期化で敵が正常に召喚されないケース」を修正している。なので、現在の待ち時間の一部は単なる仕様ではなく、初期化・湧き処理の不具合または不安定さが絡んでいた可能性が高い。
+</div>
+
+<h2>4. クラス調整</h2>
+
+<div class="grid">
+  <div class="card class">
+    <h3>覚醒ヴァルキリー</h3>
+    <p>複数スキルのPvEダメージを上方調整。</p>
+    <ul>
+      <li>浄化の盾 III</li>
+      <li>エンスラーの神聖 III</li>
+      <li>電撃突き</li>
+      <li>極：電撃突き</li>
+      <li>流れ：神聖放出</li>
+    </ul>
+    <p class="muted">PvP適用率は同時に調整されており、主にPvE火力側の強化と見てよい。</p>
+  </div>
+
+  <div class="card class">
+    <h3>伝承ウサ</h3>
+    <ul>
+      <li>同じ場所に新しい「雲」を作ると、既存の雲が新しい雲へ置換される仕様に。</li>
+      <li>「強：上善若水」関連の雲位置を調整。</li>
+      <li>「強：黒雲」から特定スキルへ連携した場合、雲の攻撃速度が<strong>20%上昇</strong>。</li>
+      <li>「強：黒雲」が最大11打撃になっていた不具合を修正。</li>
+      <li>「強：蝶の夢」の攻撃力増加効果の上書き不具合を修正。</li>
+      <li>「強：蝶解」→「強：蝶号令」の連携を改善。</li>
+    </ul>
+  </div>
+</div>
+
+<h3>その他のクラス修正</h3>
+<ul>
+  <li>ウィザード：破滅の火球系が<strong>自分より低い位置の敵に当たりやすく</strong>なるよう高さ判定を拡大。</li>
+  <li>ミスティック / 格闘家：攻撃力増加バフが上位効果に正常更新されない問題を修正。</li>
+  <li>ジャイアント、コルセア、セラフィムなどにも個別不具合修正。</li>
+</ul>
+
+<h2>5. 全クラス共通の基礎能力値整理</h2>
+<ul>
+  <li>最大HP、HP自然回復、全攻撃力、全被害減少、全回避など、レベル上昇時の共通成長を整理。</li>
+  <li>クラス固有差は新しいパッシブへ移管。</li>
+  <li>新パッシブはLv50 / 55 / 60 / 65 / 70で自動習得。</li>
+  <li>Lv72未満のキャラは、新パッシブ習得により最大HPが少し増える場合あり。</li>
+</ul>
+
+<h3>共通成長の例</h3>
+<table>
+<thead><tr><th>能力値</th><th>新ルール</th></tr></thead>
+<tbody>
+<tr><td>最大HP</td><td>Lv1～49：1Lvごと+12 / Lv50～75：1Lvごと+25</td></tr>
+<tr><td>HP自然回復</td><td>全レベルで5固定</td></tr>
+<tr><td>全攻撃力</td><td>Lv1～75：2レベルごとに+1</td></tr>
+<tr><td>全被害減少</td><td>Lv49まで増加、以降増加なし</td></tr>
+<tr><td>全回避</td><td>Lv50まで増加、以降増加なし</td></tr>
+</tbody>
+</table>
+
+<h2>6. その他コンテンツ</h2>
+<ul>
+  <li><strong>エダニア：内郭：</strong>新方式の「タキオンの痕跡」全8種を追加。試練クリアでアグリスの金貨。</li>
+  <li><strong>1シルバー転移：</strong>次回ローテーションはムサ / メファ。韓国10/7～10/28、グローバル10/8～10/29。</li>
+  <li>エダニア：内郭メインクエストの演出・導線・NPC・カメラ・称号などを多数修正。</li>
+  <li>アレシオンのメインクエストで未支給だった一部称号も後日補填予定。</li>
+</ul>
+
+<h2>7. UI・利便性・細かい修正</h2>
+<ul>
+  <li>キャラ情報(P)で現在経験値と次レベルまでの必要経験値を確認可能。</li>
+  <li>狩場情報にモンスターのレベル・獲得経験値情報を追加。</li>
+  <li>画面上部のモンスター情報にモンスターのレベル表示。</li>
+  <li>狩場情報の「戦闘経験値が高い」「スキル経験値が高い」タグを削除。</li>
+  <li>バッグや倉庫などの並べ替え操作を、一般的なドラッグ＆ドロップ方式へ変更。</li>
+  <li>マガイア神殿のドロップ一覧に誤表示されていた「封印された黒魔力水晶」を削除。</li>
+  <li>採集ミニゲーム、馬装備、馬車、製作ノート、拠点安全地帯など多数の不具合修正。</li>
+</ul>
+
+<h2>ジョシュ向けに見ると</h2>
+<div class="grid">
+  <div class="card important">
+    <span class="score">最重要</span>
+    <h3>Lv70以上を上げる意味が急増</h3>
+    <p>A418帯で事象・マガイアなど高難度狩場を触るなら、Lv70→75の<strong>モンスターに対する追加攻撃力+18 / 被害減少+18</strong>は無視できない。</p>
+  </div>
+  <div class="card hunt">
+    <span class="score">直撃</span>
+    <h3>事象の地平線</h3>
+    <p>今日話していた「敵を全滅させても次が動かない」「普通のイベドルが出にくい」という体感に関係しそうな湧き・初期化調整が複数入っている。</p>
+  </div>
+  <div class="card note">
+    <span class="score">注目</span>
+    <h3>占領戦・ギルドリーグ</h3>
+    <p>参加報酬に経験値の価値が追加される。特に占領戦勝利はLv66換算7.5%、薔薇戦争勝利は15%と大きい。</p>
+  </div>
+</div>
+
+<footer>
+  <p>対象：黒い砂漠研究所 2026年10月2日（金）アップデート。</p>
+  <p>研究所内容はテスト段階のため、本サーバー実装時に変更される可能性があります。</p>
+</footer>
+
+</div>
+</body>
+</html>
